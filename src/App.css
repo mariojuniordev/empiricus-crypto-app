@@ -6,6 +6,7 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
+  text-decoration: none;
 }
 
 :root {
@@ -22,3 +23,4 @@ html {
     font-size: 87.5%; 
   }
 }
+
