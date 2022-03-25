@@ -47,7 +47,7 @@ const Carousel = () => {
   const classes = useStyles();
 
   const items = trending.map((coin) => {
-    let profit = coin.price_change_percentage_24h >= 0;
+    let profit = coin.price_change_percentage_24h;
 
     return (
       <Link className={classes.carouselItem} to={`/coins/${coin.id}`}>
@@ -60,7 +60,12 @@ const Carousel = () => {
         <span>
           {coin?.symbol}
           &nbsp;
-          <span>
+          <span
+            style={{
+              color: (profit > 0) ? "var(--green)" : "var(--red)",
+              fontWeight: 500,
+            }}
+          >
             {profit && "+"} {coin.price_change_percentage_24h?.toFixed(2)}%
           </span>
         </span>

@@ -12,6 +12,8 @@
 :root {
   --black: #14161a;
   --white: #fff;
+  --green: rgb(25, 233, 25);
+  --red: rgba(255, 0, 0, 0.932);
 }
 
 html {
