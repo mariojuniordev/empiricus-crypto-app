@@ -49,15 +49,15 @@ const Header = () => {
               className={classes.title} 
               variant='h6'
             >
-              RV Crypto Currencies
+              RV Crypto App
             </Typography>
-
+            <h3>Reference Currency:</h3>
             <Select 
               variant="outlined" 
               style={{
                 width: 100,
                 height: 40,
-                marginRight: 15,
+                margin: 10,
               }}
               value={currency}
               onChange={(e) => setCurrency(e.target.value as string)}
