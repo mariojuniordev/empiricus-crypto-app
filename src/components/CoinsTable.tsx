@@ -159,7 +159,10 @@ const CoinsTable = () => {
                         { profit > 0 ? "+" : "" }
                         { coin.price_change_percentage_24h.toFixed(2)}%
                       </TableCell>
-
+                      <TableCell align="right">
+                        { symbol }{ " " }
+                        { numberWithCommas(coin.market_cap.toString().slice(0, -6)) } M
+                      </TableCell>
                     </TableRow>
                   )
                 })}
