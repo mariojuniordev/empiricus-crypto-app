@@ -19,6 +19,10 @@ import { useNavigate } from "react-router-dom";
 import { CryptoState } from "../CryptoContext";
 import { CoinList } from "../services/api";
 
+export function numberWithCommas(x: any) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 const CoinsTable = () => {
   const [coins, setCoins] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
@@ -26,7 +30,7 @@ const CoinsTable = () => {
 
   const navigate = useNavigate();
 
-  const { currency } = CryptoState();
+  const { currency, symbol } = CryptoState();
 
   const fetchCoins = async () => {
     const { data } = await axios.get(CoinList(currency));
@@ -83,7 +87,7 @@ const CoinsTable = () => {
         <TableContainer>
           {
             loading? (
-              <LinearProgress style={{ backgroundColor: "gold" }}/>
+              <LinearProgress  style={{ backgroundColor: "gold" }}/>
             ) : (
               <Table>
                 <TableHead style={{ backgroundColor: "var(--yellow)"}}>
@@ -141,6 +145,10 @@ const CoinsTable = () => {
                           <span style={{ color: "darkgrey" }}>{ coin.name }</span>
                         </div>                        
                       </TableCell>
+                      <TableCell align="right"> 
+                        { symbol } { " " }
+                        { numberWithCommas(coin.current_price.toFixed(2)) }
+                      </TableCell>
                       <TableCell
                         align="right"
                         style={{
@@ -151,6 +159,7 @@ const CoinsTable = () => {
                         { profit > 0 ? "+" : "" }
                         { coin.price_change_percentage_24h.toFixed(2)}%
                       </TableCell>
+
                     </TableRow>
                   )
                 })}
