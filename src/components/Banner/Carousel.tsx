@@ -28,7 +28,7 @@ const Carousel = () => {
   },[currency]);
 
   
-  const useStyles = makeStyles((theme) => ({
+  const useStyles = makeStyles(() => ({
     carousel: {
       height: "50%",
       display: "flex",
@@ -66,7 +66,8 @@ const Carousel = () => {
               fontWeight: 500,
             }}
           >
-            {profit && "+"} {coin.price_change_percentage_24h?.toFixed(2)}%
+            {profit > 0 ? "+" : ""} 
+            {coin.price_change_percentage_24h?.toFixed(2)}%
           </span>
         </span>
 

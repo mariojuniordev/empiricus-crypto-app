@@ -36,7 +36,7 @@ const Banner = () => {
               fontFamily: "Poppins"
             }}
           >
-            RV Crypto App
+            Top Crypto for Today
           </Typography>
           <Typography
             variant="subtitle2"
