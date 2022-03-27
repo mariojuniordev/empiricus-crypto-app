@@ -126,7 +126,7 @@ const CoinsTable = () => {
 
                 <TableBody>
                   {handleSearch()
-                    .slice((page - 1)* 10, (page - 1) * 10 + 10)
+                    .slice((page - 1)* 5, (page - 1) * 5 + 5)
                     .map((coin) => {
                     const profit = coin.price_change_percentage_24h;
 

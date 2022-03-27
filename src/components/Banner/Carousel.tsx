@@ -28,7 +28,7 @@ const Carousel = () => {
   },[currency]);
 
   
-  const useStyles = makeStyles(() => ({
+  const useStyles = makeStyles((theme) => ({
     carousel: {
       height: "50%",
       display: "flex",
