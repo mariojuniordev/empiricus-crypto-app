@@ -1,3 +1,4 @@
+import { Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -25,9 +26,7 @@ const CoinPage = () => {
 
   const useStyles = makeStyles(() => ({
     container: {
-      display: "flex",      
-      flexDirection: "column",
-      alignItems: "center",      
+      display: "flex",
     },
     sidebar: {
       width: "30%",
@@ -36,6 +35,12 @@ const CoinPage = () => {
       alignItems: "center",
       marginTop: 25,
       broderRight: "2px solid grey",
+    },
+    heading: {
+
+    },
+    description: {
+
     },
   }));
 
@@ -50,6 +55,12 @@ const CoinPage = () => {
           height="200"
           style={{ marginBottom: 20 }}
         />
+        <Typography variant="h3" className={classes.heading}>
+          { coin?.name } 
+        </Typography>
+        <Typography variant="subtitle1" className={classes.description}>
+          {coin?.description.en.split(". ")[0]}.
+        </Typography>
       </div>
 
       {/* chart */}
