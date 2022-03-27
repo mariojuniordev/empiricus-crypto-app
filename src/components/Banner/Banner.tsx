@@ -46,7 +46,7 @@ const Banner = () => {
               fontFamily: "Poppins"
             }}
           >
-            Access all the information regarding Crypto Currencies all around the world
+            access data regarding crypto currencies all around the world
           </Typography>
         </div>
         <Carousel/>

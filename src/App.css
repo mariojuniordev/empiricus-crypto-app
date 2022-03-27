@@ -10,8 +10,8 @@
 }
 
 :root {
-  --black: #14161a;
-  --hover-black: #131111;
+  --black: #282a36;
+  --hover-black: #6272a4;
   --white: #fff;
   --green: rgb(25, 233, 25);
   --red: rgba(255, 0, 0, 0.932);

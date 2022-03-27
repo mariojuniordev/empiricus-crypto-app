@@ -4,9 +4,10 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { CryptoState } from "../CryptoContext";
 import { HistoricalChart } from "../services/api";
-import { Line } from "react-chartjs-2";
+import { Chart } from 'react-chartjs-2'
 
-const CoinInfo = ( { coin } : any) => {
+
+const CoinInfo = ( { coin }: any ) => {
   const [historicData, setHistoricData] = useState<any[]>([]);
   const [days, setDays] = useState(1);
 
@@ -59,22 +60,26 @@ const CoinInfo = ( { coin } : any) => {
             />
           ) : (
             <>
-              <Line 
-              data={{
-                labels:historicData.map((coin: string) => {
-                  let date = new Date(coin[0]);
-                  let time = date.getHours() > 12 
-                  ? `${date.getHours() - 12}:${date.getMinutes()} PM` 
-                  : `${date.getHours()}:${date.getMinutes()} AM`
+              <Chart 
+                  data={{
+                    labels: historicData.map((coin) => {
+                      let date = new Date(coin[0]);
+                      let time = date.getHours() > 12
+                        ? `${date.getHours() - 12}:${date.getMinutes()} PM`
+                        : `${date.getHours()}:${date.getMinutes()} AM`;
 
-                  return days === 1 ? time : date.toLocaleDateString();
-                }),
+                      return days === 1 ? time : date.toLocaleDateString();
+                    }),
 
-                datasets: [
-                  {data: historicData.map((coin: string) => coin[1])}
-                ]
-              }}              
-              />
+                    datasets: [{
+                      data: historicData.map((coin: any) => coin[1]),
+                      label: `Price ( Last ${days} Days ) in ${currency}`,
+                      borderColor: "gold",
+                    },
+                    ],
+                  }}                  
+                  type="line"
+                />
             </>
           )
         }
