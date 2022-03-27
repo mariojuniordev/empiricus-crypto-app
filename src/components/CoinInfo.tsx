@@ -4,7 +4,30 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { CryptoState } from "../CryptoContext";
 import { HistoricalChart } from "../services/api";
+import { chartDays } from "../config/data";
+import SelectButton from "./SelectButton";
+
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js'
 import { Chart } from 'react-chartjs-2'
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+)
 
 
 const CoinInfo = ( { coin }: any ) => {
@@ -61,6 +84,8 @@ const CoinInfo = ( { coin }: any ) => {
           ) : (
             <>
               <Chart 
+                  type="line"
+                  style={{ marginBottom: 25 }}
                   data={{
                     labels: historicData.map((coin) => {
                       let date = new Date(coin[0]);
@@ -77,9 +102,28 @@ const CoinInfo = ( { coin }: any ) => {
                       borderColor: "gold",
                     },
                     ],
-                  }}                  
-                  type="line"
+                  }}    
+                  options={{
+                    elements: {
+                      point: {
+                        radius: 1,
+                      },
+                    },
+                  }}             
                 />
+                <div>
+                {
+                  chartDays.map(day => (
+                    <SelectButton
+                      key={day.value}
+                      onClick={() => setDays(day.value)}
+                      selected={day.value === days }
+                    >
+                      {day.label}
+                    </SelectButton>
+                  ))
+                }
+                </div>
             </>
           )
         }
