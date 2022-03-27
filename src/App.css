@@ -6,11 +6,16 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
+  text-decoration: none;
 }
 
 :root {
   --black: #14161a;
+  --hover-black: #131111;
   --white: #fff;
+  --green: rgb(25, 233, 25);
+  --red: rgba(255, 0, 0, 0.932);
+  --yellow: #EEBC1D;
 }
 
 html {
@@ -22,3 +27,4 @@ html {
     font-size: 87.5%; 
   }
 }
+
