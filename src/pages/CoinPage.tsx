@@ -7,7 +7,7 @@ import CoinInfo from "../components/CoinInfo";
 import { CryptoState } from "../CryptoContext";
 import { SingleCoin } from "../services/api";
 
-export function numberWithCommas(x: any) {
+export function numberWithCommas(x: number) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 

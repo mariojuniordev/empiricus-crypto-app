@@ -1,3 +1,4 @@
+import { CircularProgress } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -6,7 +7,7 @@ import { Link } from "react-router-dom";
 import { CryptoState } from "../../CryptoContext";
 import { TrendingCoins } from "../../services/api";
 
-export function numberWithCommas(x: any) {
+export function numberWithCommas(x: number) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
@@ -28,7 +29,7 @@ const Carousel = () => {
   },[currency]);
 
   
-  const useStyles = makeStyles((theme) => ({
+  const useStyles = makeStyles(() => ({
     carousel: {
       height: "50%",
       display: "flex",
@@ -88,19 +89,30 @@ const Carousel = () => {
   }
 
   return (
-    <div className={classes.carousel}>
-      <AliceCarousel
-        mouseTracking
-        infinite
-        autoPlayInterval={1000}
-        animationDuration={1500}
-        disableDotsControls
-        disableButtonsControls
-        responsive={responsive}
-        autoPlay
-        items={items}
-      />
-    </div>
+    <>
+      <div className={classes.carousel}>
+      {!trending ? (
+        <CircularProgress
+        style={{ color: "gold" }}
+        size={250}
+        thickness={1}
+        />
+        ) : (    
+          <AliceCarousel
+            mouseTracking
+            infinite
+            autoPlayInterval={1000}
+            animationDuration={1500}
+            disableDotsControls
+            disableButtonsControls
+            responsive={responsive}
+            autoPlay
+            items={items}
+          />
+        )
+      }
+      </div>         
+    </>
   );
 }
 
