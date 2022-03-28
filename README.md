@@ -31,7 +31,7 @@ npm start
 - Receber Inputs de valor investido;
 - Exibir Gráfico com variações de preço no valor investido ao longo de 1 ano;
 
-<h3>2. Requisitos Extras</h3>
+<h4>2. Requisitos Extras</h3>
 
 - Ao interagir com o gráfico, mostrar detalhes do investimento e a possibilidade do usuário refazer a simulação com outro período;
 
