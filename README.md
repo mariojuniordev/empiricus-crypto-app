@@ -27,7 +27,7 @@ npm start
 
 <h4>1. Requisitos Básicos</h4>
 
-- Mostrar reanbilidade do bitcoin;
+- Mostrar rentabilidade do bitcoin;
 - Receber Inputs de valor investido;
 - Exibir Gráfico com variações de preço no valor investido ao longo de 1 ano;
 
