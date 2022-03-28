@@ -7,7 +7,7 @@ import CoinInfo from "../components/CoinInfo";
 import { CryptoState } from "../CryptoContext";
 import { SingleCoin } from "../services/api";
 
-export function numberWithCommas(x: any) {
+export function numberWithCommas(x: number) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
@@ -77,9 +77,9 @@ const CoinPage = () => {
         <Typography variant="h3" className={classes.heading}>
           { coin?.name } 
         </Typography>
-        <Typography variant="subtitle1" className={classes.description}>
+        {/*<Typography variant="subtitle1" className={classes.description}>
           {(coin?.description.en.split(". ")[0])}.
-        </Typography>
+        </Typography> */}
         <div className={classes.marketData}>
           <span style={{ display: "flex" }}>
             <Typography variant="h5" className={classes.heading}>
@@ -135,7 +135,7 @@ const CoinPage = () => {
       </div>
 
       {/* chart */}
-      <CoinInfo/>
+      <CoinInfo coin={ coin }/>
     </div>
   )
 }
