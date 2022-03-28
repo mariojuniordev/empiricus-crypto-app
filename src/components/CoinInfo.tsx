@@ -2,7 +2,6 @@ import {
   CircularProgress,
   createTheme,
   ThemeProvider,
-  useMediaQuery,
   TextField,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
