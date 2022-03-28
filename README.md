@@ -1,4 +1,4 @@
-<h1>empiricus-crpyto-app</h1>
+<h1>empiricus-crypto-app</h1>
 
 Este repositório é destinado a um desafio de código proposto pela empresa Real Valor/Empiricus. A aplicação foi desenvolvida usando ReactJs, Material UI, TypeScript e tecnologias relaciondas.
 
