@@ -1,5 +1,5 @@
-<img src="images/home.png"/>
-<img src="images/coinpage.png"/>
+<img src="public/images/home.png"/>
+<img src="public/images/coinpage.png"/>
 
 <h1>empiricus-crpyto-app</h1>
 
