@@ -27,7 +27,7 @@ const Footer = () => {
 
   return (
     <footer className={classes.container}>
-      <h3>Developed by Mário Júnior. Reach me on my social Media!</h3>
+      <h3 style={{textAlign: 'center'}}>Developed by Mário Júnior. Reach me on my social Media!</h3>
       <div>
         <Link href="https://www.linkedin.com/in/mariojuniordev/">
           <GitHubIcon fontSize="large" className={classes.link}/>

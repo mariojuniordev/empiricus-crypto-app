@@ -19,6 +19,7 @@ const useStyles = makeStyles(() => ({
     fontFamily: "Poppins",
     fontWeight: "bold",
     cursor: "pointer",
+    textAlign: 'left'
   }
 }))
 
@@ -51,7 +52,7 @@ const Header = () => {
             >
               RV Crypto App
             </Typography>
-            <h3>Reference Currency:</h3>
+            <h3 style={{textAlign: 'right'}}>Reference Currency:</h3>
             <Select 
               variant="outlined" 
               style={{

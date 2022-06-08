@@ -67,8 +67,27 @@ const CoinInfo = ({ coin }: any) => {
       setInvestmentData(newValues);
     }
 
-    console.log(data.prices);
   };
+
+  function formatPercentage(initialValue: number, finalValue: number) {
+    let percentage = (finalValue - initialValue) / initialValue;
+
+    if (percentage > 0) {
+      return `+${percentage.toFixed(2)}%`;
+    }
+
+    return `${percentage.toFixed(2)}%`;
+  }
+
+  function isPercentagePositive(initialValue: number, finalValue: number) {
+    let percentage = (finalValue - initialValue) / initialValue;
+
+    if (percentage > 0) {
+      return true;
+    }
+
+    return false;
+  }
 
   useEffect(() => {
     fetchHistoricData();
@@ -97,6 +116,9 @@ const CoinInfo = ({ coin }: any) => {
   }));
 
   const classes = useStyles();
+  
+  const formattedPercentage = formatPercentage(filter, investmentData[investmentData.length - 1])
+  const isNumberPositive  = isPercentagePositive(filter, investmentData[investmentData.length - 1])
 
   return (
     <ThemeProvider theme={darkTheme}>
@@ -109,6 +131,16 @@ const CoinInfo = ({ coin }: any) => {
           />
         ) : (
           <>
+              {typeof filter === 'number' && 
+              typeof investmentData[investmentData.length - 1] === 'number' &&
+              <div>
+                <h2>Your Investment Results</h2>
+                <h1 style={{marginBottom: 15, textAlign: 'center', color: isNumberPositive ? 'green' : 'red'}}>
+                  {formattedPercentage}
+                </h1>
+              </div>
+              }
+              
             {/* INVESTMENT SIMULATION */}            
             <TextField
               label="Type a value to simulate an investment"
