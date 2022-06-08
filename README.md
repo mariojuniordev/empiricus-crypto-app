@@ -3,7 +3,7 @@
 Este repositório é destinado a um desafio de código proposto pela empresa Real Valor/Empiricus. A aplicação foi desenvolvida usando ReactJs, Material UI, TypeScript e tecnologias relaciondas.
 
 <img src="public/images/home.png"/>
-<img src="public/images/coinpage.png"/>
+<img src="public/images/new-coin-page.png"/>
 
 <h2>Solução Adotada para o Projeto</h2>
 
