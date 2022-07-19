@@ -72,10 +72,10 @@ const CoinInfo = ({ coin }: any) => {
     let percentage = (finalValue - initialValue) / initialValue;
 
     if (percentage > 0) {
-      return `+${percentage.toFixed(2)}%`;
+      return `+${(percentage*100).toFixed(2)}%`;
     }
 
-    return `${percentage.toFixed(2)}%`;
+    return `${(percentage*100).toFixed(2)}%`;
   }
 
   function isPercentagePositive(initialValue: number, finalValue: number) {
